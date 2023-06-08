@@ -1,4 +1,4 @@
-FROM docker://nvcr.io/nvidia/pytorch:22.03-py3
+FROM nvcr.io/nvidia/pytorch:22.03-py3
 
 #update libraries
 RUN apt update
