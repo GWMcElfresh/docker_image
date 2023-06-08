@@ -16,7 +16,6 @@ RUN python3 -m pip install segmenteverygrain
 RUN python3 -m pip install tqdm
 RUN python3 -m pip install importlib
 RUN python3 -m pip install opencv-python
-RUN python3 -m pip install torch torchvision torchaudio
 RUN python3 -m pip install nvidia-pyindex
 RUN python3 -m pip install nvidia-tensorrt
 RUN python3 -m pip install -U scikit-learn
