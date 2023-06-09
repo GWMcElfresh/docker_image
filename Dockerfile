@@ -1,4 +1,5 @@
 FROM nvcr.io/nvidia/pytorch:22.03-py3
+LABEL org.opencontainers.image.source="https://github.com/gwmcelfresh/docker_image"
 ARG DEBIAN_FRONTEND=noninteractive
 
 #update libraries
