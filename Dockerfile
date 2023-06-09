@@ -1,5 +1,5 @@
-FROM nvcr.io/nvidia/pytorch:22.03-py3
-LABEL org.opencontainers.image.source="https://github.com/gwmcelfresh/docker_image"
+FROM tensorflow/tensorflow:devel-gpu
+
 ARG DEBIAN_FRONTEND=noninteractive
 
 #update libraries
@@ -12,6 +12,7 @@ RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install pandas
 RUN python3 -m pip install numpy
 RUN python3 -m pip install tensorflow
+RUN python3 -m pip install torch torchvision torchaudio
 RUN python3 -m pip install git+https://github.com/facebookresearch/segment-anything.git
 RUN python3 -m pip install segmenteverygrain
 RUN python3 -m pip install tqdm
