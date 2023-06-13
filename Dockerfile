@@ -7,11 +7,15 @@ RUN apt update
 RUN apt install -y git
 RUN apt install ffmpeg libsm6 libxext6  -y
 
+
+
 #install python libraries
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install pandas
 RUN python3 -m pip install numpy
 RUN python3 -m pip install tensorflow
+# the torch install is rather large, so this command tries to free up space so that it can install.
+RUN apt-get clean
 RUN python3 -m pip install torch torchvision torchaudio
 RUN python3 -m pip install git+https://github.com/facebookresearch/segment-anything.git
 RUN python3 -m pip install segmenteverygrain
