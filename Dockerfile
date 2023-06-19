@@ -16,7 +16,9 @@ RUN python3 -m pip install numpy
 RUN python3 -m pip install tensorflow
 # the torch install is rather large, so this command tries to free up space so that it can install.
 RUN apt-get clean
-RUN python3 -m pip install torch torchvision torchaudio
+RUN python3 -m pip install torch 
+RUN python3 -m pip install torchvision 
+RUN python3 -m pip install torchaudio
 RUN python3 -m pip install git+https://github.com/facebookresearch/segment-anything.git
 RUN python3 -m pip install segmenteverygrain
 RUN python3 -m pip install tqdm
