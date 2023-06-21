@@ -10,10 +10,11 @@ RUN apt install ffmpeg libsm6 libxext6  -y
 
 
 #install python libraries
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install pandas
-RUN python3 -m pip install numpy
-RUN python3 -m pip install tensorflow
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install pandas && \
+    python3 -m pip install numpy && \
+    python3 -m pip install tensorflow && \
+    python -m pip cache purge
 # the torch install is rather large, so this command tries to free up space so that it can install.
 RUN apt-get clean
 RUN python3 -m pip install torch 
