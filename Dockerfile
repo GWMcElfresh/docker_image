@@ -14,7 +14,7 @@ RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install pandas && \
     python3 -m pip install numpy && \
     python3 -m pip install tensorflow
-RUN python -m pip cache purge
+RUN python3 -m pip cache purge
 # the torch install is rather large, so this command tries to free up space so that it can install.
 RUN apt-get clean
 RUN python3 -m pip install torch 
