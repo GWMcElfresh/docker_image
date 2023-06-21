@@ -3,9 +3,9 @@ FROM nvcr.io/nvidia/pytorch:22.03-py3
 ARG DEBIAN_FRONTEND=noninteractive
 
 #update libraries
-RUN apt update
-RUN apt install -y git
-RUN apt install ffmpeg libsm6 libxext6  -y
+RUN apt update && \
+    apt install -y git && \
+    apt install ffmpeg libsm6 libxext6  -y
 
 
 
@@ -14,7 +14,8 @@ RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install pandas && \
     python3 -m pip install numpy && \
     python3 -m pip install tensorflow
-RUN python3 -m pip cache purge
+#RUN python3 -m pip cache purge
+RUN df -h
 # the torch install is rather large, so this command tries to free up space so that it can install.
 RUN apt-get clean
 RUN python3 -m pip install torch 
