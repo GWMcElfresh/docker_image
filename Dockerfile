@@ -23,7 +23,7 @@ RUN python3 -m pip install torch && \
     apt-get clean
 
 RUN df -h /
-RUN python3 -m pip install torchaudio
+RUN TMPDIR=/var/tmp python3 -m pip install torchaudio
 RUN python3 -m pip install git+https://github.com/facebookresearch/segment-anything.git
 RUN python3 -m pip install segmenteverygrain
 RUN python3 -m pip install tqdm
