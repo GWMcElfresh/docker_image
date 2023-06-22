@@ -15,12 +15,14 @@ RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install numpy && \
     python3 -m pip install tensorflow
 #RUN python3 -m pip cache purge
-RUN df -h
+RUN df -h / 
 # the torch install is rather large, so this command tries to free up space so that it can install.
 RUN apt-get clean
 RUN python3 -m pip install torch && \
     python3 -m pip install torchvision && \
     apt-get clean
+
+RUN df -h /
 RUN python3 -m pip install torchaudio
 RUN python3 -m pip install git+https://github.com/facebookresearch/segment-anything.git
 RUN python3 -m pip install segmenteverygrain
