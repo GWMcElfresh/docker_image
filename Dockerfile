@@ -1,5 +1,5 @@
 FROM nvcr.io/nvidia/pytorch:22.03-py3
-
+RUN df -h /
 ARG DEBIAN_FRONTEND=noninteractive
 
 #update libraries
